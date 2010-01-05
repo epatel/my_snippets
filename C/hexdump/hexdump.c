@@ -1,3 +1,8 @@
+/* ======================================================================
+ * Short snippet for a small hexdump function...
+ * By Edward Patel, Memention AB
+ * ====================================================================== */
+
 #include <ctype.h>
 #include <stdio.h>
 
