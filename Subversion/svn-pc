@@ -1,0 +1,15 @@
+#!/bin/bash
+#
+# This script shows a list of files to commit prior going into 'svn commit'
+# Remove files from the list and those won't be in the 'svn commit'
+#
+# Author: Edward Patel, Memention AB
+#
+
+FILENAME="/tmp/svnpc-files.$PPID"
+
+svn stat | awk '/^M/ { print $2 }' > $FILENAME
+
+$EDITOR $FILENAME
+
+svn ci `cat $FILENAME`
